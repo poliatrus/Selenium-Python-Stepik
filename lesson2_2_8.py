@@ -24,6 +24,13 @@ try:
 
     button = browser.find_element(By.CSS_SELECTOR, "button.btn")
     button.click()
+    
+    alert = browser.switch_to.alert
+    alert_text = alert.text
+    answer = alert_text.split(': ')[-1]
+    alert.accept()
+    print(answer)
+
 
 finally:
     # ожидание чтобы визуально оценить результаты прохождения скрипта
